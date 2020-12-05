@@ -19,15 +19,15 @@ class CommentsController < ApplicationController
 
   def create
     the_comment = Comment.new
-    the_comment.user_id = params.fetch("query_user_id")
+    the_comment.user_id = @current_user.id
     the_comment.prospect_id = params.fetch("query_prospect_id")
     the_comment.body = params.fetch("query_body")
 
     if the_comment.valid?
       the_comment.save
-      redirect_to("/comments", { :notice => "Comment created successfully." })
+      redirect_to("/prospects/#{the_comment.prospect_id}", { :notice => "Comment created successfully." })
     else
-      redirect_to("/comments", { :notice => "Comment failed to create successfully." })
+      redirect_to("/prospects/#{the_comment.prospect_id}", { :notice => "Comment failed to create successfully." })
     end
   end
 

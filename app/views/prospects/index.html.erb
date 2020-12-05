@@ -45,7 +45,7 @@
           Details
         </label>
 
-        <input type="text" id="details_box" name="query_details">
+        <textarea id="details_box" name="query_details" rows="3"></textarea>
       </div>
 
       <div>
@@ -106,10 +106,6 @@
         </th>
 
         <th>
-          Updated at
-        </th>
-
-        <th>
         </th>
       </tr>
 
@@ -143,9 +139,7 @@
         <td>
           <%= time_ago_in_words(a_prospect.created_at) %> ago
         </td>
-        <td>
-          <%= time_ago_in_words(a_prospect.updated_at) %> ago
-        </td>
+
 
         <td>
           <a href="/prospects/<%= a_prospect.id %>">

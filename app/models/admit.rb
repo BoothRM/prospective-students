@@ -9,6 +9,6 @@
 #
 class Admit < ApplicationRecord
   
-  belongs_to(:prospect, { :required => false, :class_name => "Prospect", :foreign_key => "prospect_id" })
+  belongs_to(:prospect, { :required => true, :class_name => "Prospect", :foreign_key => "prospect_id" })
 
 end

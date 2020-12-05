@@ -23,9 +23,9 @@ class AdmitsController < ApplicationController
 
     if the_admit.valid?
       the_admit.save
-      redirect_to("/admits", { :notice => "Admit created successfully." })
+      redirect_to("/prospects/#{the_admit.prospect_id}", { :notice => "Admit created successfully." })
     else
-      redirect_to("/admits", { :notice => "Admit failed to create successfully." })
+      redirect_to("/prospects/#{the_admit.prospect_id}", { :alert => "Admit failed to create." })
     end
   end
 
@@ -37,9 +37,9 @@ class AdmitsController < ApplicationController
 
     if the_admit.valid?
       the_admit.save
-      redirect_to("/admits/#{the_admit.id}", { :notice => "Admit updated successfully."} )
+      redirect_to("/prospects/#{the_admit.prospect_id}", { :notice => "Admit updated successfully."} )
     else
-      redirect_to("/admits/#{the_admit.id}", { :alert => "Admit failed to update successfully." })
+      redirect_to("/prospects/#{the_admit.prospect_id}", { :alert => "Admit failed to update." })
     end
   end
 

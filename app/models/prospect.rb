@@ -19,6 +19,8 @@ class Prospect < ApplicationRecord
 
   has_one(:admit, { :class_name => "Admit", :foreign_key => "prospect_id" })
 
+  has_many(:comments, { :class_name => "Comment", :foreign_key => "prospect_id", :dependent => :destroy })
+
   validates(:user_id, { :presence => true })
   validates(:round, { :presence => true })
   validates(:country, { :presence => true })

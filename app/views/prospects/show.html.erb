@@ -10,13 +10,14 @@
           Go back
         </a>
       </div>
-
+    <% if @current_user == @the_prospect.user_id %>
       <div>
         <a href="/delete_prospect/<%= @the_prospect.id %>">
           Delete prospect
         </a>
       </div>
     </div>
+    <% end %>
 
     <dl>
       <dt>
@@ -68,12 +69,21 @@
         <%= time_ago_in_words(@the_prospect.created_at) %> ago
       </dd>
 
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_prospect.updated_at) %> ago
-      </dd>
+      <% if @the_prospect.admit.id == nil %>
+        <dt>
+          Admitted?
+        </dt>
+        <dd>
+          <form action="/insert_admit" method="post">
+            <input type="hidden" value="<%= @the_prospect.id %>" name="query_prospect_id">
+            <button>Yes</button>
+          </form>
+        </dd>
+      <% else %>
+        <dt>
+          Admitted Student!
+        </dt>
+      <% end %>
     </dl>
   </div>
 </div>
@@ -138,3 +148,50 @@
 <hr>
 <% end %>
 
+<h2>Comments</h2>
+<table>
+  <tr>
+    <th>Commenter</th>
+    <th>Comment</th>
+    <th>Posted</th>
+  </tr>
+
+  <% @the_prospect.comments.each do |a_comment| %>
+  <tr>
+    <td>
+      <%= a_comment.user.name %>
+    </td>
+
+    <td>
+      <%= a_comment.body %>
+    </td>
+
+    <td>
+      <%= a_comment.created_at %>
+    </td>
+  </tr>
+ 
+  <% end %>
+</table>
+
+<h3>Add a new comment</h3>
+<form action="/insert_comment" method="post">
+      <div>
+        <input value="<%= @the_prospect.id %>" type="hidden" id="prospect_id_box" name="query_prospect_id">
+     
+        <label for="body_box">
+          Comment
+        </label>
+
+        <textarea id="body_box" name="query_body" rows="3"></textarea>
+      </div>
+
+      <button>
+        Create comment
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+  
