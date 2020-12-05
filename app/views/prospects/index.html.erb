@@ -15,12 +15,13 @@
     </h2>
 
     <form action="/insert_prospect" method="post">
+      
       <div>
-        <label for="user_id_box">
-          User
+        <label for="name_box">
+          Name
         </label>
 
-        <input type="text" id="user_id_box" name="query_user_id">
+        <input type="text" id="name_box" name="query_name">
       </div>
 
       <div>
@@ -75,12 +76,9 @@
   <div>
     <table>
       <tr>
-        <th>
-          ID
-        </th>
 
         <th>
-          User
+          Name
         </th>
 
         <th>
@@ -117,12 +115,9 @@
 
       <% @list_of_prospects.each do |a_prospect| %>
       <tr>
-        <td>
-          <%= a_prospect.id %>
-        </td>
 
         <td>
-          <%= a_prospect.user_id %>
+          <%= a_prospect.name %>
         </td>
 
         <td>

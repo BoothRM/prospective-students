@@ -20,10 +20,10 @@
 
     <dl>
       <dt>
-        User
+        Contact Point
       </dt>
       <dd>
-        <%= @the_prospect.user_id %>
+        <%= @the_prospect.user.name %>
       </dd>
 
       <dt>
@@ -80,7 +80,7 @@
 
 <hr>
 
-
+<% if @current_user.id == @the_prospect.user_id %>
 <div>
   <div>
     <h2>
@@ -88,13 +88,6 @@
     </h2>
 
     <form action="/modify_prospect/<%= @the_prospect.id %>"  method="post" >
-      <div>
-        <label for="user_id_box">
-          User
-        </label>
-
-        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_prospect.user_id %>">
-      </div>
 
       <div>
         <label for="country_box">
@@ -142,5 +135,6 @@
     </form>
   </div>
 </div>
-
 <hr>
+<% end %>
+

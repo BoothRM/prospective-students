@@ -19,7 +19,8 @@ class ProspectsController < ApplicationController
 
   def create
     the_prospect = Prospect.new
-    the_prospect.user_id = params.fetch("query_user_id")
+    the_prospect.user_id = @current_user.id
+    the_prospect.name = params.fetch("query_name")
     the_prospect.country = params.fetch("query_country")
     the_prospect.round = params.fetch("query_round")
     the_prospect.details = params.fetch("query_details")
@@ -30,7 +31,7 @@ class ProspectsController < ApplicationController
       the_prospect.save
       redirect_to("/prospects", { :notice => "Prospect created successfully." })
     else
-      redirect_to("/prospects", { :notice => "Prospect failed to create successfully." })
+      redirect_to("/prospects", { :alert => "Prospect failed to create successfully." })
     end
   end
 

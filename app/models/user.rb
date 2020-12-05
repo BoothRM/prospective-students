@@ -4,6 +4,7 @@
 #
 #  id              :integer          not null, primary key
 #  ask_me_about    :text
+#  name            :string
 #  country         :string
 #  email           :string
 #  password_digest :string
