@@ -1,0 +1,166 @@
+<div>
+  <div>
+    <h1>
+      List of all prospects
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new prospect
+    </h2>
+
+    <form action="/insert_prospect" method="post">
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="country_box">
+          Country
+        </label>
+
+        <input type="text" id="country_box" name="query_country">
+      </div>
+
+      <div>
+        <label for="round_box">
+          Round
+        </label>
+
+        <input type="text" id="round_box" name="query_round">
+      </div>
+
+      <div>
+        <label for="details_box">
+          Details
+        </label>
+
+        <input type="text" id="details_box" name="query_details">
+      </div>
+
+      <div>
+        <label for="contact_box">
+          Contact
+        </label>
+
+        <input type="text" id="contact_box" name="query_contact">
+      </div>
+
+      <div>
+        <label for="status_box">
+          Status
+        </label>
+
+        <input type="text" id="status_box" name="query_status">
+      </div>
+
+      <button>
+        Create prospect
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Country
+        </th>
+
+        <th>
+          Round
+        </th>
+
+        <th>
+          Details
+        </th>
+
+        <th>
+          Contact
+        </th>
+
+        <th>
+          Status
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_prospects.each do |a_prospect| %>
+      <tr>
+        <td>
+          <%= a_prospect.id %>
+        </td>
+
+        <td>
+          <%= a_prospect.user_id %>
+        </td>
+
+        <td>
+          <%= a_prospect.country %>
+        </td>
+
+        <td>
+          <%= a_prospect.round %>
+        </td>
+
+        <td>
+          <%= a_prospect.details %>
+        </td>
+
+        <td>
+          <%= a_prospect.contact %>
+        </td>
+
+        <td>
+          <%= a_prospect.status %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_prospect.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_prospect.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/prospects/<%= a_prospect.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

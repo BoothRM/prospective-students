@@ -1,0 +1,86 @@
+<div>
+  <div>
+    <h1>
+      List of all admits
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new admit
+    </h2>
+
+    <form action="/insert_admit" method="post">
+      <div>
+        <label for="prospect_id_box">
+          Prospect
+        </label>
+
+        <input type="text" id="prospect_id_box" name="query_prospect_id">
+      </div>
+
+      <button>
+        Create admit
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Prospect
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_admits.each do |an_admit| %>
+      <tr>
+        <td>
+          <%= an_admit.id %>
+        </td>
+
+        <td>
+          <%= an_admit.prospect_id %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(an_admit.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(an_admit.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/admits/<%= an_admit.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

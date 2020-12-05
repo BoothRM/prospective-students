@@ -43,8 +43,8 @@ class UserAuthenticationController < ApplicationController
     @user.password_confirmation = params.fetch("query_password_confirmation")
     @user.year = params.fetch("query_year")
     @user.country = params.fetch("query_country")
-    @user.ask_me_about = params.fetch("query_ask_me_about")
-    @user.prospects_count = params.fetch("query_prospects_count")
+    #@user.ask_me_about = params.fetch("query_ask_me_about")
+    #@user.prospects_count = params.fetch("query_prospects_count")
 
     save_status = @user.save
 

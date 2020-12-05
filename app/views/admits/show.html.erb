@@ -1,0 +1,71 @@
+<div>
+  <div>
+    <h1>
+      Admit #<%= @the_admit.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/admits">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_admit/<%= @the_admit.id %>">
+          Delete admit
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Prospect
+      </dt>
+      <dd>
+        <%= @the_admit.prospect_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_admit.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_admit.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit admit
+    </h2>
+
+    <form action="/modify_admit/<%= @the_admit.id %>"  method="post" >
+      <div>
+        <label for="prospect_id_box">
+          Prospect
+        </label>
+
+        <input type="text" id="prospect_id_box" name="query_prospect_id" value="<%= @the_admit.prospect_id %>">
+      </div>
+
+      <button>
+        Update admit
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

@@ -1,0 +1,146 @@
+<div>
+  <div>
+    <h1>
+      Prospect #<%= @the_prospect.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/prospects">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_prospect/<%= @the_prospect.id %>">
+          Delete prospect
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_prospect.user_id %>
+      </dd>
+
+      <dt>
+        Country
+      </dt>
+      <dd>
+        <%= @the_prospect.country %>
+      </dd>
+
+      <dt>
+        Round
+      </dt>
+      <dd>
+        <%= @the_prospect.round %>
+      </dd>
+
+      <dt>
+        Details
+      </dt>
+      <dd>
+        <%= @the_prospect.details %>
+      </dd>
+
+      <dt>
+        Contact
+      </dt>
+      <dd>
+        <%= @the_prospect.contact %>
+      </dd>
+
+      <dt>
+        Status
+      </dt>
+      <dd>
+        <%= @the_prospect.status %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_prospect.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_prospect.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit prospect
+    </h2>
+
+    <form action="/modify_prospect/<%= @the_prospect.id %>"  method="post" >
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_prospect.user_id %>">
+      </div>
+
+      <div>
+        <label for="country_box">
+          Country
+        </label>
+
+        <input type="text" id="country_box" name="query_country" value="<%= @the_prospect.country %>">
+      </div>
+
+      <div>
+        <label for="round_box">
+          Round
+        </label>
+
+        <input type="text" id="round_box" name="query_round" value="<%= @the_prospect.round %>">
+      </div>
+
+      <div>
+        <label for="details_box">
+          Details
+        </label>
+
+        <input type="text" id="details_box" name="query_details" value="<%= @the_prospect.details %>">
+      </div>
+
+      <div>
+        <label for="contact_box">
+          Contact
+        </label>
+
+        <input type="text" id="contact_box" name="query_contact" value="<%= @the_prospect.contact %>">
+      </div>
+
+      <div>
+        <label for="status_box">
+          Status
+        </label>
+
+        <input type="text" id="status_box" name="query_status" value="<%= @the_prospect.status %>">
+      </div>
+
+      <button>
+        Update prospect
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

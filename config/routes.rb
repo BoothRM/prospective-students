@@ -2,6 +2,44 @@ Rails.application.routes.draw do
 
 
 
+  # Routes for the Admit resource:
+
+  # CREATE
+  post("/insert_admit", { :controller => "admits", :action => "create" })
+          
+  # READ
+  get("/admits", { :controller => "admits", :action => "index" })
+  
+  get("/admits/:path_id", { :controller => "admits", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_admit/:path_id", { :controller => "admits", :action => "update" })
+  
+  # DELETE
+  get("/delete_admit/:path_id", { :controller => "admits", :action => "destroy" })
+
+  #------------------------------
+
+  # Routes for the Prospect resource:
+
+  # CREATE
+  post("/insert_prospect", { :controller => "prospects", :action => "create" })
+          
+  # READ
+  get("/prospects", { :controller => "prospects", :action => "index" })
+  
+  get("/prospects/:path_id", { :controller => "prospects", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_prospect/:path_id", { :controller => "prospects", :action => "update" })
+  
+  # DELETE
+  get("/delete_prospect/:path_id", { :controller => "prospects", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the User account:
 
   # SIGN UP FORM

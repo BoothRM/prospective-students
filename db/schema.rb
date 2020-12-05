@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_05_163330) do
+ActiveRecord::Schema.define(version: 2020_12_05_164104) do
+
+  create_table "admits", force: :cascade do |t|
+    t.integer "prospect_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "prospects", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "country"
+    t.string "round"
+    t.string "details"
+    t.string "contact"
+    t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
