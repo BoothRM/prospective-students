@@ -39,7 +39,7 @@ class ProspectsController < ApplicationController
     the_id = params.fetch("path_id")
     the_prospect = Prospect.where({ :id => the_id }).at(0)
 
-    the_prospect.user_id = params.fetch("query_user_id")
+    the_prospect.user_id = @current_user.id
     the_prospect.country = params.fetch("query_country")
     the_prospect.round = params.fetch("query_round")
     the_prospect.details = params.fetch("query_details")
