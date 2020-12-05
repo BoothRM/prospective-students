@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      Prospect #<%= @the_prospect.id %> details
+      <%= @the_prospect.name %> Details
     </h1>
 
     <div>
@@ -68,9 +68,8 @@
       <dd>
         <%= time_ago_in_words(@the_prospect.created_at) %> ago
       </dd>
-
-      <% if @the_prospect.admit.id == nil %>
-        <dt>
+    
+       <dt>
           Admitted?
         </dt>
         <dd>
@@ -79,11 +78,8 @@
             <button>Yes</button>
           </form>
         </dd>
-      <% else %>
-        <dt>
-          Admitted Student!
-        </dt>
-      <% end %>
+      
+        
     </dl>
   </div>
 </div>

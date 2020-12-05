@@ -88,4 +88,12 @@ class UserAuthenticationController < ApplicationController
     redirect_to("/", { :notice => "User account cancelled" })
   end
  
+  def index
+    @list_of_users = User.all
+
+    
+    render({ :template => "user_authentication/index.html.erb" })
+
+  end
+
 end

@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      List of all admits
+      Ask me about...
     </h1>
   </div>
 </div>
@@ -21,30 +21,26 @@
         </th>
 
         <th>
-          Round
+          Ask me about
         </th>
 
       </tr>
 
-      <% @list_of_admits.each do |an_admit| %>
+      <% @list_of_users.each do |an_user| %>
       <tr>
         <td>
-          <%= an_admit.prospect.name %>
+          <%= an_user.name %>
         </td>
 
         <td>
-          <%= an_admit.prospect.country %>
+          <%= an_user.country %>
         </td>
 
         <td>
-          <%= an_admit.prospect.round %> 
+          <%= an_user.ask_me_about %> 
         </td>
 
-        <td>
-          <a href="/prospects/<%= an_admit.prospect_id %>">
-            Show details
-          </a>
-        </td>
+ 
       </tr>
       <% end %>
     </table>

@@ -26,8 +26,7 @@
         <textarea id="ask_me_about_box" name="query_ask_me_about" rows="3"><%= @current_user.ask_me_about %></textarea> 
       </div>
       <div>
-        <label for="prospects_count_box">Prospects count</label>
-        <input id="prospects_count_box" name="query_prospects_count" value="<%= @current_user.prospects_count %>">
+        <input type="hidden" id="prospects_count_box" name="query_prospects_count" value="<%= @current_user.prospects_count %>">
       </div>
 
       <div>
