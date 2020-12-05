@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_12_05_164104) do
     t.string "year"
     t.string "country"
     t.text "ask_me_about"
-    t.integer "prospects_count"
+    t.integer "prospects_count", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

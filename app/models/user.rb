@@ -7,7 +7,7 @@
 #  country         :string
 #  email           :string
 #  password_digest :string
-#  prospects_count :integer
+#  prospects_count :integer          default(0)
 #  year            :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null

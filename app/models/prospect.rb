@@ -18,4 +18,10 @@ class Prospect < ApplicationRecord
 
   has_one(:admit, { :class_name => "Admit", :foreign_key => "prospect_id" })
 
+  validates(:user_id, { :presence => true })
+  validates(:round, { :presence => true })
+  validates(:country, { :presence => true })
+  validates(:contact, { :presence => true })
+
+
 end

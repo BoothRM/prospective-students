@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :year
       t.string :country
       t.text :ask_me_about
-      t.integer :prospects_count
+      t.integer :prospects_count, { :default => 0 }
 
       t.timestamps
     end

@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   post("/insert_prospect", { :controller => "prospects", :action => "create" })
           
   # READ
+  get("/", { :controller => "prospects", :action => "index" })
+
   get("/prospects", { :controller => "prospects", :action => "index" })
   
   get("/prospects/:path_id", { :controller => "prospects", :action => "show" })
@@ -58,6 +60,7 @@ Rails.application.routes.draw do
   # ------------------------------
 
   # SIGN IN FORM
+
   get("/user_sign_in", { :controller => "user_authentication", :action => "sign_in_form" })
   # AUTHENTICATE AND STORE COOKIE
   post("/user_verify_credentials", { :controller => "user_authentication", :action => "create_cookie" })
